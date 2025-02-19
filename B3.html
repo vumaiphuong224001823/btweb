@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .gallery img {
+            width: 30%;
+            height: auto;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .gallery img {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Các nước Đông Nam Á</h1>
+    <div class="gallery">
+        <img src="lá cờ vn.jpg" alt="Việt Nam">
+        <img src="lá cờ camphuchia.png" alt="Camphuchia">
+        <img src="lá cờ indonexia.gif" alt="Indonexia">
+        <img src="lao.gif" alt="LàoLào">
+        <img src="singapore.jpg" alt="Singapore">
+        <img src="philippin.jpg" alt="Philippine">
+        <img src="myanmar-2.jpg" alt="Myanmar">
+        <img src="lá cờ malayxia.jpg" alt="Malayxia">
+        <img src="Dong-ti-mo.jpg" alt="Dongtimo">
+        <img src="thai lan.jpg" alt="Thái Lan">
+    </div>
+</body>
+</html>
