@@ -4,51 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Bài Tập</title>
+    <title>Tách Bài Viết</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; }
+        .article { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Danh Sách Bài Tập</h1>
-        <ul>
-            <li><a href="B1.html">Bài 1</a></li>
-            <li><a href="B2.html">Bài 2</a></li>
-            <li><a href="B3.html">Bài 3</a></li>
-            <li><a href="B4.html">Bài 4</a></li>
-        </ul>
+        <h1>Danh Sách Bài Viết</h1>
+        <div id="articles"></div>
     </div>
+    <script>
+        const codeFileContent = `/* Bài 1 */\nconsole.log('Đây là bài 1');\n\n/* Bài 2 */\nconsole.log('Đây là bài 2');\n\n/* Bài 3 */\nconsole.log('Đây là bài 3');\n\n/* Bài 4 */\nconsole.log('Đây là bài 4');`;
+        
+        function splitArticles(content) {
+            const articles = content.split(/\/\* Bài \d+ \*\//).filter(Boolean);
+            const container = document.getElementById('articles');
+            
+            articles.forEach((article, index) => {
+                const div = document.createElement('div');
+                div.className = 'article';
+                div.innerHTML = `<h2>Bài ${index + 1}</h2><pre>${article.trim()}</pre>`;
+                container.appendChild(div);
+            });
+        }
+
+        splitArticles(codeFileContent);
+    </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
